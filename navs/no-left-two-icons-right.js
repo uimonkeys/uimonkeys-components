@@ -11,6 +11,8 @@ import {
 } from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 
+//Хак, чтобы в навбаре были видны элементы с отрицательным marginTop.
+//Только для <Navigator.NavigationBar />
 const navigationStyles = { ...Navigator.NavigationBar.StylesIOS };
 
 navigationStyles.Stages.Left.LeftButton.overflow = 'visible';

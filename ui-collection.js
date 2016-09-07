@@ -12,6 +12,9 @@ import Alerts from './alerts'
 import Tabs from './tabs'
 import Navs from './navigator'
 import Lists from './list'
+import Toolbars from './toolbars'
+import ListElements from './lists/list-elements'
+import Search from './search'
 
 export default class UICollection extends Component {
   constructor(props, context) {
@@ -51,12 +54,33 @@ export default class UICollection extends Component {
   goToLists = () => {
     this.props.navigator.push({
       title: 'Lists',
-      component : Lists,
+      component : ListElements,
       passProps: {
         title: 'Lists'
       }
     });
   }
+
+  goToToolbars = () => {
+    this.props.navigator.push({
+      title: 'Toolbars',
+      component : Toolbars,
+      passProps: {
+        title: 'Toolbars'
+      }
+    });
+  }
+
+  goToSearch = () => {
+    this.props.navigator.push({
+      title: 'Search',
+      component : Search,
+      passProps: {
+        title: 'Search'
+      }
+    });
+  }
+
 
   render() {
     return(
@@ -65,6 +89,8 @@ export default class UICollection extends Component {
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goToTabs()}><Text>Tabs</Text></TouchableOpacity>
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goToNavs()}><Text>Navs</Text></TouchableOpacity>
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goToLists()}><Text>Lists</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToToolbars()}><Text>Toolbars</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToSearch()}><Text>Search</Text></TouchableOpacity>
       </View>
     )
   }

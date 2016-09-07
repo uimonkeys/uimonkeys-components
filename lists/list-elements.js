@@ -8,15 +8,22 @@ import {
   AlertIOS,
   Image,
   Switch,
+  Slider,
   Picker,
+  ProgressViewIOS,
   TouchableOpacity
 } from 'react-native';
+
+import Icon from 'react-native-vector-icons/Ionicons';
+import SimpleStepper from 'react-native-simple-stepper'
 
 export default class ListElements extends Component {
   constructor(props, context) {
     super(props, context);
     this.state = {
-      switchTurnedOn: false
+      switchTurnedOn: false,
+      stepperValue: 0,
+      sliderValue: 10
     }
   }
 
@@ -52,9 +59,76 @@ export default class ListElements extends Component {
         <View style={styles.innerContainer}>
           <View style={[styles.coloredBlock, {backgroundColor: '#31D8C1'}]}></View>
           <Text style={styles.fieldDescription}>List 3</Text>
-          <View style={styles.switch}>
-
+          <View style={[{flexDirection: 'row', alignItems: 'flex-end', marginRight: 10}]}>
+            <Text style={{color: 'grey'}}>Off</Text><Icon style={{marginHorizontal: 8}} name='ios-arrow-forward' size={14} color='grey' />
           </View>
+        </View>
+        { divider }
+        <View style={styles.innerContainer}>
+          <View style={[styles.coloredBlock, {backgroundColor: '#BDF06C'}]}></View>
+          <Text style={styles.fieldDescription}>List 4</Text>
+          <View style={[{flexDirection: 'row', alignItems: 'flex-end', marginRight: 10}]}>
+            <Text style={{color: 'grey'}}>On</Text><Icon style={{marginHorizontal: 8}} name='ios-arrow-forward' size={14} color='grey' />
+          </View>
+        </View>
+        { divider }
+        <View style={styles.innerContainer}>
+          <View style={[styles.coloredBlock, {backgroundColor: '#FFFEA4'}]}></View>
+          <Text style={styles.fieldDescription}>List 5</Text>
+          <View style={[{flexDirection: 'row', alignItems: 'flex-end', marginRight: 10}]}>
+            <Icon style={{marginHorizontal: 8}} name='ios-arrow-forward' size={14} color='grey' />
+          </View>
+        </View>
+        { divider }
+        <View style={styles.innerContainer}>
+          <View style={[styles.coloredBlock, {backgroundColor: '#FFFEA4'}]}></View>
+          <Text style={styles.fieldDescription}>List 6</Text>
+        </View>
+        { divider }
+        <View style={styles.innerContainer}>
+          <View style={[styles.coloredBlock, {backgroundColor: '#FFFEA4'}]}></View>
+          <Text style={styles.fieldDescription}>List 7</Text>
+        </View>
+        { divider }
+        <View style={styles.innerContainer}>
+          <View style={[styles.coloredBlock, {backgroundColor: '#FFFEA4'}]}></View>
+          <Text style={styles.fieldDescription}>Stepper value: {this.state.stepperValue}</Text>
+          <View style={styles.switch}>
+            <SimpleStepper
+            tintColor="#3D92F3"
+            underlayColor="rgba(0,0,0,.1)"
+            valueChanged={(value) => this.setState({stepperValue: value})} />
+          </View>
+        </View>
+        { divider }
+        <View style={styles.innerContainer}>
+          <View style={[styles.coloredBlock, {backgroundColor: '#31D8C1'}]}></View>
+          <Text style={styles.fieldDescription}>Slider value: {(this.state.sliderValue).toFixed(0)}</Text>
+          <View style={{flex: 1, flexDirection: 'row', alignItems: 'center', marginRight: 10}}>
+            <Icon name='ios-volume-down' size={25} color='black' />
+            <Slider
+              minimumValue={0}
+              maximumValue={20}
+              value={this.state.sliderValue}
+              onValueChange={(value) => this.setState({sliderValue: value})}
+              style={{flex: 1, marginHorizontal: 10}}
+            />
+            <Icon name='ios-volume-up' size={25} color='black' />
+          </View>
+        </View>
+        { divider }
+        <View style={styles.innerContainer}>
+          <View style={[styles.coloredBlock, {backgroundColor: '#31D8C1'}]}></View>
+          <Text style={styles.fieldDescription}>Slider</Text>
+          <Slider
+            minimumValue={0}
+            maximumValue={7}
+            value={0}
+            step={1}
+            trackImage={require('../img/slider-background.png')}
+            // onValueChange={(value) => this.setState({sliderValue: value})}
+            style={{flex: 1, marginHorizontal: 10}}
+          />
         </View>
       </View>
     )

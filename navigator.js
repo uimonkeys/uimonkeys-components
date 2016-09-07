@@ -11,7 +11,7 @@ import {
 } from 'react-native';
 import NavCustomRightIconText from './navs/custom-right-text-icon'
 import NavNoLeftTwoIconsRight from './navs/no-left-two-icons-right'
-
+import AllNavs from './navs/other-navs'
 
 export default class Navs extends Component {
   constructor(props, context) {
@@ -38,11 +38,22 @@ export default class Navs extends Component {
     });
   }
 
+  goToAllNavs = () => {
+    this.props.navigator.push({
+      title: 'Navs',
+      component : AllNavs,
+      passProps: {
+        title: 'Navs'
+      }
+    });
+  }
+
   render() {
     return (
       <View style={{marginTop: 65}}>
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goToCustomRightTextIcon()}><Text>Custom right text + icon</Text></TouchableOpacity>
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goToNoLeftTwoIconsRight()}><Text>No left text and 2 right icons</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToAllNavs()}><Text>All other navs</Text></TouchableOpacity>
       </View>
     )
   }
