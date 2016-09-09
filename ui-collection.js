@@ -16,78 +16,20 @@ import Toolbars from './toolbars'
 import ListElements from './lists/list-elements'
 import Search from './search'
 import Mail from './mail'
+import Dialer from './dialer'
+import Caller from './caller'
 
 export default class UICollection extends Component {
   constructor(props, context) {
     super(props, context);
   }
 
-  goToAlerts = () => {
+  goTo = (title, component) => {
     this.props.navigator.push({
-      title: 'Alerts',
-      component : Alerts,
+      title: title,
+      component : component,
       passProps: {
-        title: 'Alerts'
-      }
-    });
-  }
-
-  goToTabs = () => {
-    this.props.navigator.push({
-      title: 'Tabs',
-      component : Tabs,
-      passProps: {
-        title: 'Tabs'
-      }
-    });
-  }
-
-  goToNavs = () => {
-    this.props.navigator.push({
-      title: 'Navs',
-      component : Navs,
-      passProps: {
-        title: 'Navs'
-      }
-    });
-  }
-
-  goToLists = () => {
-    this.props.navigator.push({
-      title: 'Lists',
-      component : ListElements,
-      passProps: {
-        title: 'Lists'
-      }
-    });
-  }
-
-  goToToolbars = () => {
-    this.props.navigator.push({
-      title: 'Toolbars',
-      component : Toolbars,
-      passProps: {
-        title: 'Toolbars'
-      }
-    });
-  }
-
-  goToSearch = () => {
-    this.props.navigator.push({
-      title: 'Search',
-      component : Search,
-      passProps: {
-        title: 'Search'
-      }
-    });
-  }
-
-  goToMail = () => {
-    this.props.navigator.push({
-      title: 'Mailbox',
-      component : Mail,
-      passProps: {
-        title: 'Mailbox'
+        title: title
       }
     });
   }
@@ -95,13 +37,15 @@ export default class UICollection extends Component {
   render() {
     return(
       <View style={{marginTop: 65}}>
-        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToAlerts()}><Text>Alerts</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToTabs()}><Text>Tabs</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToNavs()}><Text>Navs</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToLists()}><Text>Lists</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToToolbars()}><Text>Toolbars</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToSearch()}><Text>Search</Text></TouchableOpacity>
-        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToMail()}><Text>Mailbox</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Alerts', Alerts)}><Text>Alerts</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Tabs', Tabs)}><Text>Tabs</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Navs', Navs)}><Text>Navs</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Lists', ListElements)}><Text>Lists</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Toolbars', Toolbars)}><Text>Toolbars</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Search', Search)}><Text>Search</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Mailbox', Mail)}><Text>Mailbox</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Dialer', Dialer)}><Text>Dialer</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Caller', Caller)}><Text>Caller</Text></TouchableOpacity>
       </View>
     )
   }
