@@ -15,6 +15,7 @@ import Lists from './list'
 import Toolbars from './toolbars'
 import ListElements from './lists/list-elements'
 import Search from './search'
+import Mail from './mail'
 
 export default class UICollection extends Component {
   constructor(props, context) {
@@ -81,6 +82,15 @@ export default class UICollection extends Component {
     });
   }
 
+  goToMail = () => {
+    this.props.navigator.push({
+      title: 'Mailbox',
+      component : Mail,
+      passProps: {
+        title: 'Mailbox'
+      }
+    });
+  }
 
   render() {
     return(
@@ -91,6 +101,7 @@ export default class UICollection extends Component {
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goToLists()}><Text>Lists</Text></TouchableOpacity>
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goToToolbars()}><Text>Toolbars</Text></TouchableOpacity>
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goToSearch()}><Text>Search</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goToMail()}><Text>Mailbox</Text></TouchableOpacity>
       </View>
     )
   }
