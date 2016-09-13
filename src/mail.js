@@ -10,6 +10,7 @@ import {
 
 import { SwipeListView, SwipeRow } from 'react-native-swipe-list-view';
 import Icon from 'react-native-vector-icons/Ionicons';
+import Checkbox from './components/checkbox'
 
 export default class Mail extends Component {
   constructor(props, context) {
@@ -53,9 +54,7 @@ export default class Mail extends Component {
         </SwipeRow>
         <View>
           <View style={styles.inboxRow}>
-            <View style={styles.inboxCheckbox}>
-              <View style={styles.emptyCircle}></View>
-            </View>
+            <Checkbox isChecked={false} />
             <View style={styles.inboxRowContent}>
               <Icon style={{marginLeft: 15}} name='ios-filing-outline' size={25} color='#157DFB' />
               <Text style={styles.inboxContentText}>All inboxes</Text>
@@ -65,9 +64,7 @@ export default class Mail extends Component {
         </View>
         <View>
           <View style={styles.inboxRow}>
-            <View style={styles.inboxCheckbox}>
-              <View style={styles.emptyCircle}></View>
-            </View>
+            <Checkbox isChecked={false} />
             <View style={styles.inboxRowContent}>
               <Icon style={{marginLeft: 15}} name='ios-filing-outline' size={25} color='#157DFB' />
               <Text style={styles.inboxContentText}>Gmail</Text>
@@ -77,9 +74,7 @@ export default class Mail extends Component {
         </View>
         <View>
           <View style={styles.inboxRow}>
-            <View style={styles.inboxCheckbox}>
-              <View style={styles.emptyCircle}></View>
-            </View>
+            <Checkbox isChecked={false} />
             <View style={styles.inboxRowContent}>
               <Icon style={{marginLeft: 15}} name='ios-filing-outline' size={25} color='#157DFB' />
               <Text style={styles.inboxContentText}>Yandex</Text>
@@ -89,13 +84,8 @@ export default class Mail extends Component {
         </View>
         <View>
           <View style={styles.inboxRow}>
-            <View style={styles.inboxCheckbox}>
-              <View style={styles.checkedCircle}>
-                <Icon name='ios-checkmark-circle' size={28} color='#157DFB' />
-              </View>
-            </View>
+            <Checkbox isChecked={true} />
             <View style={[styles.inboxRowContent, {borderBottomWidth: 0}]}>
-              <Icon style={{marginLeft: 15}} name='ios-filing-outline' size={25} color='#157DFB' />
               <Text style={styles.inboxContentText}>iCloud</Text>
               <Icon name="ios-menu" color='#929292' size={25} style={{position: 'absolute', right: 10, top: 12}}/>
             </View>

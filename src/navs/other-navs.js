@@ -21,13 +21,17 @@ export default class AllNavs extends Component {
       <View style={{marginTop: 65}}>
         <View style={styles.navbar}>
           <View style={[styles.cell, {alignItems: 'flex-start', marginLeft: 10}]}>
-            <Icon name='ios-add' size={30} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon name='ios-add' size={30} color='#157EFB' />
+            </TouchableOpacity>
           </View>
           <View style={styles.cell}>
             <Text style={{fontWeight: '500'}}>Header</Text>
           </View>
           <View style={[styles.cell, {alignItems: 'flex-end', marginRight: 10}]}>
-            <Text style={{color: '#157EFB'}}>Edit</Text>
+            <TouchableOpacity>
+              <Text style={{color: '#157EFB'}}>Edit</Text>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -35,15 +39,21 @@ export default class AllNavs extends Component {
 
         <View style={styles.navbar}>
           <View style={[styles.cell, {alignItems: 'flex-start', marginLeft: 10, flexDirection: 'row', justifyContent: 'flex-start', paddingTop: 5}]}>
-            <Icon name='ios-arrow-back' size={30} color='#157EFB' />
-            <Text style={{color: '#157EFB', marginTop: 6, marginLeft: 5}}>Back</Text>
+            <TouchableOpacity style={styles.touchableWrap}>
+              <Icon name='ios-arrow-back' size={30} color='#157EFB' />
+              <Text style={{color: '#157EFB', marginTop: 6, marginLeft: 5}}>Back</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.cell}>
             <Text style={{fontWeight: '500'}}>Header</Text>
           </View>
           <View style={[styles.cell, {alignItems: 'flex-end', marginRight: 10, flexDirection: 'row', justifyContent: 'flex-end'}]}>
-            <Icon style={{marginRight: 15}} name='ios-search-outline' size={25} color='#157EFB' />
-            <Icon name='ios-add' size={30} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon style={{marginRight: 15}} name='ios-search-outline' size={25} color='#157EFB' />
+            </TouchableOpacity>
+            <TouchableOpacity>
+              <Icon name='ios-add' size={30} color='#157EFB' />
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -51,14 +61,18 @@ export default class AllNavs extends Component {
 
         <View style={styles.navbar}>
           <View style={[styles.cell, {alignItems: 'flex-start', marginLeft: 10, flexDirection: 'row', justifyContent: 'flex-start', paddingTop: 5}]}>
-            <Icon name='ios-arrow-back' size={30} color='#157EFB' />
-            <Text style={{color: '#157EFB', marginTop: 6, marginLeft: 5}}>Settings</Text>
+            <TouchableOpacity style={styles.touchableWrap}>
+              <Icon name='ios-arrow-back' size={30} color='#157EFB' />
+              <Text style={{color: '#157EFB', marginTop: 6, marginLeft: 5}}>Settings</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.cell}>
             <Text style={{fontWeight: '500'}}>Notifications</Text>
           </View>
           <View style={[styles.cell, {alignItems: 'flex-end', marginRight: 10}]}>
-            <Text style={{color: '#157EFB'}}>Edit</Text>
+            <TouchableOpacity>
+              <Text style={{color: '#157EFB'}}>Edit</Text>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -66,14 +80,18 @@ export default class AllNavs extends Component {
 
         <View style={styles.navbar}>
           <View style={[styles.cell, {alignItems: 'flex-start', marginLeft: 10, flexDirection: 'row', justifyContent: 'flex-start', paddingTop: 5}]}>
-            <Icon name='ios-arrow-back' size={30} color='#157EFB' />
-            <Text style={{color: '#157EFB', marginTop: 6, marginLeft: 5}}>Years</Text>
+            <TouchableOpacity style={styles.touchableWrap}>
+              <Icon name='ios-arrow-back' size={30} color='#157EFB' />
+              <Text style={{color: '#157EFB', marginTop: 6, marginLeft: 5}}>Years</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.cell}>
             <Text style={{fontWeight: '500'}}>Collections</Text>
           </View>
           <View style={[styles.cell, {alignItems: 'flex-end', marginRight: 10}]}>
-            <Icon name='ios-search-outline' size={25} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon name='ios-search-outline' size={25} color='#157EFB' />
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -81,13 +99,17 @@ export default class AllNavs extends Component {
 
         <View style={styles.navbar}>
           <View style={[styles.cell, {alignItems: 'flex-start', marginLeft: 10, flexDirection: 'row', justifyContent: 'flex-start', paddingTop: 5}]}>
-            <Icon name='ios-menu' size={25} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon name='ios-menu' size={25} color='#157EFB' />
+            </TouchableOpacity>
           </View>
           <View style={styles.cell}>
             <Text style={{fontWeight: '500'}}>Hamburger</Text>
           </View>
           <View style={[styles.cell, {alignItems: 'flex-end', marginRight: 10}]}>
-            <Text style={{color: '#157EFB'}}>Edit</Text>
+            <TouchableOpacity>
+              <Text style={{color: '#157EFB'}}>Edit</Text>
+            </TouchableOpacity>
           </View>
         </View>
 
@@ -95,15 +117,19 @@ export default class AllNavs extends Component {
 
         <View style={styles.navbar}>
           <View style={[styles.cell, {alignItems: 'flex-start', marginLeft: 10, flexDirection: 'row', justifyContent: 'flex-start', paddingTop: 5}]}>
-            <Icon name='ios-arrow-back' size={30} color='#157EFB' />
-            <Text style={{color: '#157EFB', marginTop: 6, marginLeft: 5}}>Back</Text>
+            <TouchableOpacity style={styles.touchableWrap}>
+              <Icon name='ios-arrow-back' size={30} color='#157EFB' />
+              <Text style={{color: '#157EFB', marginTop: 6, marginLeft: 5}}>Back</Text>
+            </TouchableOpacity>
           </View>
           <View style={styles.cell}>
             <Text style={{fontWeight: '500'}}>1 of 16</Text>
           </View>
           <View style={[styles.cell, {alignItems: 'flex-end', marginRight: 10, flexDirection: 'row', justifyContent: 'flex-end', paddingTop: 5}]}>
-            <Text style={{color: '#157EFB', width: 50, textAlign: 'right', fontSize: 11, marginRight: 5, lineHeight: 11, position: 'relative', top: -5}}>Bring it on</Text>
-            <Icon name='ios-arrow-forward' size={30} color='#157EFB' />
+            <TouchableOpacity style={{alignItems: 'flex-end', flexDirection: 'row', justifyContent: 'flex-end'}}>
+              <Text style={{color: '#157EFB', width: 50, textAlign: 'right', fontSize: 11, marginRight: 5, lineHeight: 11, position: 'relative', top: -5}}>Bring it on</Text>
+              <Icon name='ios-arrow-forward' size={30} color='#157EFB' />
+            </TouchableOpacity>
           </View>
         </View>
       </View>
@@ -133,4 +159,9 @@ const styles = StyleSheet.create({
     flex: 1,
     alignItems: 'center'
   },
+  touchableWrap : {
+    alignItems: 'flex-start',
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+  }
 })

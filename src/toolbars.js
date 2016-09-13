@@ -25,7 +25,9 @@ export default class Toolbars extends Component {
             <Text>Updated Just Now</Text>
           </View>
           <View style={{flex: 1, alignItems: 'flex-end'}}>
-            <Icon style={{marginRight: 10}} name='ios-create-outline' size={25} color="#4F8EF7" />
+            <TouchableOpacity>
+              <Icon style={{marginRight: 10}} name='ios-create-outline' size={25} color="#4F8EF7" />
+            </TouchableOpacity>
           </View>
         </View>
         <View style={{marginVertical: 5}}></View>
@@ -40,39 +42,57 @@ export default class Toolbars extends Component {
             <Text>Updated Just Now</Text>
           </View>
           <View style={{flex: 1, alignItems: 'flex-end'}}>
-            <Icon style={{marginRight: 10}} name='ios-create-outline' size={25} color="#4F8EF7" />
+            <TouchableOpacity>
+              <Icon style={{marginRight: 10}} name='ios-create-outline' size={25} color="#4F8EF7" />
+            </TouchableOpacity>
           </View>
         </View>
 
         <View style={{marginVertical: 5}}></View>
         <View style={styles.toolbar}>
           <View style={styles.icons}>
-            <Icon name='ios-arrow-back' size={20} color='#C4C4C4' />
+            <TouchableOpacity>
+              <Icon name='ios-arrow-back' size={20} color='#C4C4C4' />
+            </TouchableOpacity>
           </View>
           <View style={styles.icons}>
-            <Icon name='ios-arrow-forward' size={20} color='#C4C4C4' />
+            <TouchableOpacity>
+              <Icon name='ios-arrow-forward' size={20} color='#C4C4C4' />
+            </TouchableOpacity>
           </View>
           <View style={styles.icons}>
-            <Icon name='ios-share-outline' size={25} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon name='ios-share-outline' size={25} color='#157EFB' />
+            </TouchableOpacity>
           </View>
           <View style={styles.icons}>
-            <Icon name='ios-book-outline' size={25} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon name='ios-book-outline' size={25} color='#157EFB' />
+            </TouchableOpacity>
           </View>
           <View style={styles.icons}>
-            <Icon name='ios-browsers-outline' size={25} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon name='ios-browsers-outline' size={25} color='#157EFB' />
+            </TouchableOpacity>
           </View>
         </View>
 
         <View style={{marginVertical: 5}}></View>
         <View style={styles.toolbar}>
           <View style={styles.icons}>
-            <Icon name='ios-share-outline' size={25} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon name='ios-share-outline' size={25} color='#157EFB' />
+            </TouchableOpacity>
           </View>
           <View style={styles.icons}>
-            <Icon name='ios-heart-outline' size={25} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon name='ios-heart-outline' size={25} color='#157EFB' />
+            </TouchableOpacity>
           </View>
           <View style={styles.icons}>
-            <Icon name='ios-trash-outline' size={25} color='#157EFB' />
+            <TouchableOpacity>
+              <Icon name='ios-trash-outline' size={25} color='#157EFB' />
+            </TouchableOpacity>
           </View>
         </View>
       </View>

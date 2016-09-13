@@ -6,7 +6,7 @@ import {
   View,
   NavigatorIOS
 } from 'react-native';
-import UICollection from './ui-collection'
+import UICollection from './src/ui-collection'
 
 class uimonkeyscomponents extends Component {
   render() {
