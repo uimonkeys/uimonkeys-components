@@ -5,12 +5,37 @@ import {
   Text,
   View,
   NavigatorIOS,
-  TouchableOpacity
+  TouchableOpacity,
 } from 'react-native';
 
 import { SwipeListView, SwipeRow } from 'react-native-swipe-list-view';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Checkbox from './components/checkbox'
+import SortableListView from 'react-native-sortable-listview'
+
+let data = {
+  0: {text: 'All Inboxes'},
+  1: {text: 'Gmail'},
+  2: {text: 'Yahoo'},
+  3: {text: 'Apple'}
+}
+
+let order = Object.keys(data);
+
+let RowComponent = React.createClass({
+  render: function() {
+    return <View>
+        <TouchableOpacity style={styles.inboxRow} {...this.props.sortHandlers}>
+          <Checkbox isChecked={false} />
+          <View style={styles.inboxRowContent}>
+            <Icon style={{marginLeft: 15}} name='ios-filing-outline' size={25} color='#157DFB' />
+            <Text style={styles.inboxContentText}>{this.props.data.text}</Text>
+            <Icon name="ios-menu" color='#929292' size={25} style={{position: 'absolute', right: 10, top: 12}}/>
+          </View>
+        </TouchableOpacity>
+      </View>
+  }
+})
 
 export default class Mail extends Component {
   constructor(props, context) {
@@ -24,7 +49,6 @@ export default class Mail extends Component {
           disableRightSwipe={true}
           disableLeftSwipe={false}
           rightOpenValue={-180}
-          style={{flex: 1}}
         >
             <View style={styles.hiddenElements}>
                 <View style={[styles.hiddenBlock, {backgroundColor: '#C2C2C2'}]}><Text style={styles.hiddenText}>More</Text></View>
@@ -52,45 +76,15 @@ export default class Mail extends Component {
                 </View>
             </View>
         </SwipeRow>
-        <View>
-          <View style={styles.inboxRow}>
-            <Checkbox isChecked={false} />
-            <View style={styles.inboxRowContent}>
-              <Icon style={{marginLeft: 15}} name='ios-filing-outline' size={25} color='#157DFB' />
-              <Text style={styles.inboxContentText}>All inboxes</Text>
-              <Icon name="ios-menu" color='#929292' size={25} style={{position: 'absolute', right: 10, top: 12}}/>
-            </View>
-          </View>
-        </View>
-        <View>
-          <View style={styles.inboxRow}>
-            <Checkbox isChecked={false} />
-            <View style={styles.inboxRowContent}>
-              <Icon style={{marginLeft: 15}} name='ios-filing-outline' size={25} color='#157DFB' />
-              <Text style={styles.inboxContentText}>Gmail</Text>
-              <Icon name="ios-menu" color='#929292' size={25} style={{position: 'absolute', right: 10, top: 12}}/>
-            </View>
-          </View>
-        </View>
-        <View>
-          <View style={styles.inboxRow}>
-            <Checkbox isChecked={false} />
-            <View style={styles.inboxRowContent}>
-              <Icon style={{marginLeft: 15}} name='ios-filing-outline' size={25} color='#157DFB' />
-              <Text style={styles.inboxContentText}>Yandex</Text>
-              <Icon name="ios-menu" color='#929292' size={25} style={{position: 'absolute', right: 10, top: 12}}/>
-            </View>
-          </View>
-        </View>
-        <View>
-          <View style={styles.inboxRow}>
-            <Checkbox isChecked={true} />
-            <View style={[styles.inboxRowContent, {borderBottomWidth: 0}]}>
-              <Text style={styles.inboxContentText}>iCloud</Text>
-              <Icon name="ios-menu" color='#929292' size={25} style={{position: 'absolute', right: 10, top: 12}}/>
-            </View>
-          </View>
-        </View>
+        <SortableListView
+          data={data}
+          order={order}
+          onRowMoved={e => {
+            order.splice(e.to, 0, order.splice(e.from, 1)[0]);
+            this.forceUpdate();
+          }}
+          renderRow={row => <RowComponent data={row} />}
+        />
       </View>
     )
   }
