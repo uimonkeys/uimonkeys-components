@@ -18,6 +18,7 @@ import Search from './search'
 import Mail from './mail'
 import Dialer from './dialer'
 import Caller from './caller'
+import Animation from './animation'
 
 export default class UICollection extends Component {
   constructor(props, context) {
@@ -46,6 +47,7 @@ export default class UICollection extends Component {
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Mailbox', Mail)}><Text>Mailbox</Text></TouchableOpacity>
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Dialer', Dialer)}><Text>Dialer</Text></TouchableOpacity>
         <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Caller', Caller)}><Text>Caller</Text></TouchableOpacity>
+        <TouchableOpacity style={styles.clickElement} onPress={() => this.goTo('Animation', Animation)}><Text>Animation</Text></TouchableOpacity>
       </View>
     )
   }
